@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function Header() {
+export default async function Header() {
+    const topicsRes = await fetch('http://localhost:9999/topics');
+    const topics = await topicsRes.json();
     return (
         <header className='px-8 py-6 flex justify-between bg-slate-400'>
             <h1 className='font-bold'>
@@ -9,14 +11,14 @@ export default function Header() {
 
             </h1>
             <ul className='flex justify-between gap-6'>
-                <li>
-                    <Link href={'/read/1'}>html</Link>
+                {topics.map(topic => (
 
-                </li>
-                <li>
-                    <Link href={'/read/2'}>css</Link>
+                    <li key={topic.id}>
+                        <Link href={`/read/${topic.id}`}>{topic.title}</Link>
 
-                </li>
+                    </li>
+                ))}
+
 
             </ul>
         </header>

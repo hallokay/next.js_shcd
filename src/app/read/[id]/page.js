@@ -1,11 +1,14 @@
 import React from 'react'
 
-export default function Read({ params: { id } }) {
+export default async function Read({ params: { id } }) {
+    const res = await fetch(`http://localhost:9999/topics/${id}`);
+    const data = await res.json();
+
     return (
         <div>
-            <h2>Read</h2>
+            <h2>{data.title}</h2>
             <p>
-                paramters: {id}
+                {data.body}
             </p>
         </div>
     )
