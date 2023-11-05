@@ -1,6 +1,6 @@
 import './globals.css'
 import Header from '../components/Header'
-import Link from 'next/link'
+import Controler from '@/components/Controler'
 
 
 export const metadata = {
@@ -14,19 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
-        <ul className='py-6 px-8 flex justify-end gap-6 bg-slate-300'>
-          <li>
-            <Link href={'/create'}>새 게시물</Link>
-
-          </li>
-          <li>
-            <Link href={'/update/1'}>수정</Link>
-
-          </li>
-          <li>
-            <input type='button' value={'delete'} />
-          </li>
-        </ul>
+        <Controler />
       </body>
     </html>
   )

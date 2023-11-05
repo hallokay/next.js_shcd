@@ -11,9 +11,14 @@
       "body": "css is...."
     },
     {
+      "id": 3,
       "title": "react",
-      "body": "react is .....asasasas",
-      "id": 3
+      "body": "react is .....asasasas"
+    },
+    {
+      "title": "next.js 13",
+      "body": "next.js 공부중 ㄴ냐냐냐냐냐냐냔ㄴ",
+      "id": 4
     }
   ],
   "posts": [

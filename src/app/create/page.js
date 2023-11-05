@@ -26,6 +26,7 @@ export default function Create() {
                 //게시물 생성 후 사용자가 작성한 글로 주소를 리디렉션해야함
                 console.log(result);
                 const lastId = result.id;
+                router.refresh();
                 router.push(`/read/${lastId}`)
 
 

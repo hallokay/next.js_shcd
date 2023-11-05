@@ -2,8 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 
 export default async function Header() {
-    const topicsRes = await fetch('http://localhost:9999/topics');
+    const topicsRes = await fetch('http://localhost:9999/topics', { cache: 'no-store' });
     const topics = await topicsRes.json();
+
     return (
         <header className='px-8 py-6 flex justify-between bg-slate-400'>
             <h1 className='font-bold'>
